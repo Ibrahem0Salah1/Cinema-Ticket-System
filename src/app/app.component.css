@@ -1,0 +1,256 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* main */
+.container-fluid{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* headSection Style */
+.headSection{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ticketContainer{
+    margin-right: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ticketContainer span {
+    color:#1C1C28;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 28px;
+}
+.backbtn{
+    font-size: 8px;
+    font-weight:lighter;
+    padding: 10px;
+    text-align: center;
+    color: #292d32;
+    background-color: #d2d5d7;
+    margin-left: 10px;
+    border-radius: 5px;
+    
+}
+
+.editContainer button{
+    border: 0;
+    background-color: #F9F9F9;
+    padding: 5px 8px;
+    color: #1C1C28;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    border: 1px solid #E9EAEA
+}
+.editBtn{
+    font-size: 13px;
+    margin-left: 10px;
+    color: #8A74F9;
+}
+/* end headSection */
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+    
+}
+
+  /* Card Style */
+.card {
+    border: 0.81px solid #EBEBEB;
+    width: 35%;
+    border-radius: 20px;
+}
+
+  /* Chart Style */
+.chart {
+    border: 0.81px solid #EBEBEB;
+    width: 60%;
+    border-radius: 25px;
+}
+/* Table Style */
+.table{
+    width: 100%;
+    
+}
+
+.chart app-chart{
+    width: 100%;
+    
+}
+.card app-card{
+    width: 100%;
+}
+
+/* table section */
+.tableHeadSection{
+    margin-top: 40px;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.HeaderTxt{
+    font-family: Neo Sans Arabic;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.14px;
+    color: #1C1C28;
+}
+.ticketContainer{
+    width: 50%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+}
+.p-input-icon-right{
+    /* display: block; */
+    width: 100%;
+}
+.search-bar{
+    width:80%;
+    text-align: start;
+    margin-right: 10px;
+}
+.pi-search{
+    padding-right: 5px;
+}
+.searchBar{
+    
+    width: 100%;
+    padding: 10px;
+    padding-right: 40px;
+}
+
+.icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* margin-right: 40px; */
+    /* display: block; */
+}
+.pi-sliders-h , .pi-sort-alt{
+    margin: 5px;
+    padding: 12px;
+    background-color: #FFFFFF;
+    color:#292d3286 ;
+    border: 0.75px solid #92A1AD66;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: .2s all;
+}
+.pi-sliders-h:hover{
+    background-color: #9C9D9F;
+}
+.pi-sort-alt:hover{
+    background-color: #9C9D9F;
+}
+.tableBtns{
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+}
+
+.containerFirst{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.containerFirst p{
+    margin-right: 10px;
+    color:#9C9D9F ;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.74px;
+    text-align: left;
+}
+
+    /* Media Queries */
+
+    /* Large devices (desktops, 1200px and down) */
+@media (max-width: 1200px) {
+    .card {
+        width: 38%; 
+    }
+    .chart {
+        width: 55%; 
+    }
+    /* .icons{
+        margin-right: 150px;
+        
+    } */
+    .tableBtns{
+        width: 300px;
+    }
+}
+
+    /* Medium devices (tablets, 992px and down) */
+@media (max-width: 992px) {
+    .card {
+        width: 100%; 
+        margin-bottom: 20px; 
+    }
+    .chart {
+        width: 100%; /* Stack the chart */
+        margin-bottom: 20px;
+    }
+    .tableHeadSection{
+        display: flex;
+        justify-content: start;
+        align-items: start;
+        flex-direction: column;
+    }
+    .ticketContainer, .tableBtns{
+        width: 100%;
+    }
+    .ticketContainer{
+        margin-bottom: 10px;
+    }
+    
+}
+
+    /* Small devices (landscape phones, 768px and down) */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; 
+    
+    }
+    .chart {
+        width: 100%; /* Stack the chart */
+        margin-bottom: 20px;
+    }
+}
+
+    /* Extra small devices (portrait phones, 576px and down) */
+@media (max-width: 576px) {
+    .card {
+        width: 100%; 
+    }
+    .chart {
+        width: 100%; 
+        margin-bottom: 15px;
+    }
+}

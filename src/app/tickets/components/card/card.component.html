@@ -1,0 +1,34 @@
+<div class="card">
+    <div class="container">
+        <div class="row1">
+            <p>عرض التذكرة الخاصة بالفيلم
+                <i class="pi pi-trash">
+                    <div class="tooltip-content">
+                        <span>حذف</span>
+                    </div>
+                </i>
+            </p>
+        </div>
+        <div class="row2">
+            <p #textToCopy>www.tazkty.com/473847
+                <i (click)="copyText(textToCopy)" class="pi pi-copy"></i>
+            </p>
+        </div>
+        <p class="txt">فعال حتي <span>15</span> يوليو 2023
+        <p>
+    </div>
+    <!-- horzintalLine -->
+    <div class="horzLine"></div>
+
+    <div class="containerSecond">
+        <div class="sale">
+            <p class="txt1">خصم</p>
+            <p class="txt2">25% <button><i class="pi pi-send"></i>مشاركة </button></p>
+        </div>
+        <div class="qr">
+            <qrcode [qrdata]="qrData" [width]="width" [errorCorrectionLevel]="'M'">
+            </qrcode>
+        </div>
+    </div>
+
+</div>

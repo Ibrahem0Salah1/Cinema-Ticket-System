@@ -1,0 +1,14 @@
+<p-card [style]="{'height':'350px'}">
+    <div class="container">
+        <div class="titles">
+            <h3>إحصائيات إستخدام القسيمة</h3>
+            <p>05 يوليو , 2023-05 أغسطس , 2023 <i class="pi pi-angle-down"></i></p>
+        </div>
+        <div>
+            <button>سنويا <i class="pi pi-angle-down"></i></button>
+        </div>
+    </div>
+    <div class="chart">
+        <div echarts [options]="chart" class="chart-container"></div>
+    </div>
+</p-card>

@@ -1,0 +1,68 @@
+<p-table [paginator]="true" [rows]="20" [totalRecords]="totalRecords" [showCurrentPageReport]="true"
+    [tableStyle]="{ 'min-width': '50rem' }" currentPageReportTemplate="عرض 20 من اصل 250">
+    <ng-template pTemplate="header">
+        <tr>
+            <th style="width:5%;text-align: center; color: #ABAAB1; font-weight: 400;">#</th>
+            <th style="width:15%;text-align: center;color: #ABAAB1; font-weight: 400;">المستخدم
+            </th>
+            <th style="width:10%;text-align: center;color: #ABAAB1; font-weight: 400;">رقم التذكرة</th>
+            <th style="width:15%;text-align: center;color: #ABAAB1; font-weight: 400;">قيمة التذكرة
+                <i class="pi pi-sort-alt" style="cursor: pointer;" (click)="sortByPrice()"></i>
+            </th>
+            <th style="width:15%;text-align: center;color: #ABAAB1; font-weight: 400;">السينمات</th>
+            <th style="width:10%;text-align: center;color: #ABAAB1; font-weight: 400;">عدد الأشخاص</th>
+            <th style="width:10%;text-align: center;color: #ABAAB1; font-weight: 400;">عدد مرات الشراء</th>
+            <th style="width:25%;text-align: center;color: #ABAAB1; font-weight: 400;">التذكرة</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="footer">
+        <tr *ngFor="let purchase of ticketPurchaces">
+            <td style="text-align: center; font-weight: 400; color: #92A1AD;">{{purchase.id}}
+            </td>
+            <td id="tdProbelm" style=" text-align: center; font-weight: 400; color: #1C1C28; ">
+                <div class=" img">
+                    <p *ngIf="purchase.userImg==''">Ma</p>
+                    <img *ngIf="purchase.userImg!=''" [src]="purchase.userImg" alt="">
+                </div>
+                <div>
+                    <span>{{purchase.user}}</span>
+                    <p style="color: #92A1AD; font-size: 12px;">
+                        {{purchase.phoneNumber}}
+                    </p>
+                </div>
+            </td>
+            <td style="text-align: center; font-weight: 400; color: #1C1C28;">{{purchase.ticketCode}}</td>
+            <td style="text-align: center; font-weight: 400; color: #1C1C28;">{{purchase.price}}</td>
+            <td style="text-align: center; font-weight: 400; color: #1C1C28;">
+                <div class="cinemas-container cinema-item" [attr.data-tooltip]="getCinemasTooltip(purchase.cinemas)">
+                    <span *ngFor="let cinema of purchase.cinemas; let i = index">
+                        {{cinema}}{{i < purchase.cinemas.length - 1 ? ',' : '' }} </span>
+                </div>
+            </td>
+            <td style="text-align: center; font-weight: 400; color: #1C1C28;">{{purchase.seats}}</td>
+            <td style="text-align: center; font-weight: 400; color: #1C1C28;">{{purchase.count}}</td>
+            <td style="text-align: center; font-weight: 400; color: #1C1C28; font-size: 16px;">
+                <div class="rowz">
+                    <div class="ticIcon"><i class="pi pi-ticket"></i></div>
+                    <div style="text-align: center;">
+                        تذكرة رقم {{purchase.ticketLabel}}
+                        <p class="pdf" style="color: #92A1AD; font-size: 10px; padding-left: 20px;">9mb . PDF</p>
+                    </div>
+                    <div><i (click)="downloadFile()" class="pi pi-download"></i>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </ng-template>
+    <ng-template #customPaginatorTemplate let-paginator="paginator">
+        <div id="custom-paginator">
+            <p-button (click)="paginator.changePage(0)" [disabled]="paginator.first === 0" icon="pi pi-chevron-left"
+                class="p-button-text"></p-button>
+            <p-button *ngFor="let page of paginator.getPageLinks()" (click)="paginator.changePage(page)"
+                [disabled]="paginator.isPageActive(page)">{{page + 1}}</p-button>
+            <p-button (click)="paginator.changePage(paginator.getPageCount() - 1)"
+                [disabled]="paginator.first === paginator.getPageCount() - 1" icon="pi pi-chevron-right"
+                class="p-button-text"></p-button>
+        </div>
+    </ng-template>
+</p-table>
